@@ -14,7 +14,10 @@
 <script>
     window.body.addEventListener('touchmove', (e) => {
         e.preventDefault();
-    }, { passive: false })
+    }, { passive: false });
+    window.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
 </script>
 </body>
 </html>
