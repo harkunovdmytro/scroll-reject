@@ -11,13 +11,28 @@
 </head>
 <body>
 <h1>Testing scroll reject</h1>
+<div style="display: flex; flex-direction: column; color: #fff">
+    <p style="margin-bottom: 20px;display: inline-block; background: red; padding: 100px;" id="event">PULL ME OVER with event</p>
+    <p style="margin-bottom: 20px;display: inline-block; background: red; padding: 100px; touch-action: pan-y" id="css">PULL ME OVER with touch-action pan-y</p>
+    <p style="margin-bottom: 20px;display: inline-block; background: red; padding: 100px;  pointer-events: none;" id="pointer">PULL ME OVER with pointer-events: none;</p>
+</div>
 <script>
-    document.querySelector('body').addEventListener('touchmove', (e) => {
+    const eventBlock = document.getElementById('event');
+    const cssBlock = document.getElementById('css');
+
+    // document.querySelector('body').addEventListener('touchmove', (e) => {
+    //     e.preventDefault();
+    // }, { passive: false });
+    //
+    // window.addEventListener('touchmove', (e) => {
+    //     e.preventDefault();
+    // }, { passive: false });
+    //
+    eventBlock.addEventListener('touchmove', (e) => {
         e.preventDefault();
     }, { passive: false });
-    window.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-    }, { passive: false });
+
+
 </script>
 </body>
 </html>
