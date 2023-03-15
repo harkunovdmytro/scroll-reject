@@ -12,7 +12,7 @@
 <body>
 <h1>Testing scroll reject</h1>
 <script>
-    window.body.addEventListener('touchmove', (e) => {
+    document.querySelector('body').addEventListener('touchmove', (e) => {
         e.preventDefault();
     }, { passive: false });
     window.addEventListener('touchmove', (e) => {
